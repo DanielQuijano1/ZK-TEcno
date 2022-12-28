@@ -1,0 +1,12 @@
+.estiloFlex {
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    min-height:100%;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+

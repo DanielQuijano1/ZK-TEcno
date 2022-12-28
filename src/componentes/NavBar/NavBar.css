@@ -1,0 +1,49 @@
+.miEstilo {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 51% 8%;
+    padding: 30px 0px;
+}
+
+;
+
+.estiloLogo {
+    position: relative;
+    justify-items: center;
+    bottom: -10px;
+}
+
+.estiloUl {
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    transition: .5s;
+}
+
+.estiloUl:hover> :not(:hover) {
+    opacity: .4;
+}
+
+
+
+.css-selector {
+    background: linear-gradient(232deg, #c1c1c1, #c1c1c1, #c1c1c1, #c1c1c1, #eeeeee, #c1c1c1, #c1c1c1, #c1c1c1, #c1c1c1);
+    background-size: 200% 200%;
+    animation: AnimationName 5s ease-in infinite;
+}
+
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 96%
+    }
+
+    50% {
+        background-position: 100% 5%
+    }
+
+    100% {
+        background-position: 0% 96%
+    }
+}
