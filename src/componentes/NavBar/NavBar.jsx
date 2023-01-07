@@ -3,10 +3,16 @@ import Logo from "./Logo";
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
 
-
-/* ESTUVE INTENTANDO IMPORTAR EL CSS A JSX PERO NO HABIA FORMA QUE ME DEJARA */
-
 function NavBar(props) {
+
+    const links = [
+        {title:"TIENDA", url:"/"}, 
+        {title:"RECOMENDACIONES", url:"/"}, 
+        {title:"SERVICIO TECNICO",url:"/"}, 
+        {title:"SOBRE NOSOTROS",url:"/"},
+        {title:"CONTACTANOS",url:"/"},
+    ]
+
     return (
         <div className="miEstilo css-selector">
             <div className="estiloLogo">
@@ -14,12 +20,7 @@ function NavBar(props) {
             </div>
             <nav>
                 <ul className="estiloUl">
-                    <NavItem href="/" title="CABLES" />
-                    <NavItem href="/" title="CARGADORES" />
-                    <NavItem href="/" title="ADAPTADORES" />
-                    <NavItem href="/" title="PARLANTES" />
-                    <NavItem href="/" title="FUNDAS" />
-                    <NavItem href="/" title="ACCESORIOS PC" />
+                {links.map((elemento) => ( <NavItem key={elemento.title} href={elemento.href} title={elemento.title}/>  ))}
                 </ul>
             </nav>
             <span>
@@ -30,3 +31,13 @@ function NavBar(props) {
 }
 
 export default NavBar;
+
+
+/*
+{title:"CABLES", url:"/"}, 
+        {title:"CARGADORES", url:"/"}, 
+        {title:"ADAPTADORES",url:"/"}, 
+        {title:"PARLANTES",url:"/"}, 
+        {title:"FUNDAS",url:"/"}, 
+        {title:"ACCESORIOS PC", url:"/"}
+*/

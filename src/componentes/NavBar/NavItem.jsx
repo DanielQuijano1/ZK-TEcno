@@ -6,8 +6,8 @@ import "./NavItem.css"
 const NavItem = ({ title, href }) => {
 
     return (
-        <li >
-            <a className="navItemStyle" href={href}>{title}</a>
+        <li className="fullWidth">
+            <div className="navItemStyle">{title}</div>
         </li>
     )
 }
