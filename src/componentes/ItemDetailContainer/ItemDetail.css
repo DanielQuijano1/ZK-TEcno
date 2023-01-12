@@ -1,0 +1,35 @@
+.estiloCard__detail {
+    background-color: #7e7e7e;
+    padding: 50px 10px 30px 10px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    display: block;
+}
+
+.estiloCard__imgDetail{
+    width: 100%;
+    display: grid;
+    place-content: center;
+    padding-bottom: 50px;
+}
+
+.estiloCard__detailContent{
+    display: grid;
+    place-content: center;
+}
+
+.estiloCard__Contador__detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    padding-top: 10px;
+    border-top: 1px solid #636363;
+}
+
+.boton__detail {
+    position: relative;
+    right: auto;
+    bottom: auto;
+}

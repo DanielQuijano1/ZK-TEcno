@@ -21,7 +21,6 @@ function Card(props) {
                     <h3 className="estiloCard__precio">${precio}</h3>
                 </div>
                 <div className="estiloCard__Contador margenLeft">
-                    <ItemCount stock={stock} />
                     <Link to={`/detalle/${id}`}>
                         <Button text="Agregar" />
                     </Link>

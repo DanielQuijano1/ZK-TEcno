@@ -7,6 +7,7 @@ function Categories(props) {
             <nav className="estiloCategorias_nav">
                 <div className="estiloCategorias_link espaciadoDerecho">Categorias:</div>
                 <ul className="estiloCategorias_ul">
+                    <Link to="/" className="estiloCategorias_link"> MOSTRAR TODOS</Link>
                     <Link to="/categorias/Cables" className="estiloCategorias_link">Cables</Link>
                     <Link to="/categorias/Cargadores" className="estiloCategorias_link">Cargadores</Link>
                     <Link to="/categorias/Auriculares" className="estiloCategorias_link">Auriculares</Link>

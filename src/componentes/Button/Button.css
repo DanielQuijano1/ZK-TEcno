@@ -5,14 +5,18 @@
     border: none;
     margin-top: 15px;
     color: black;
-    position: absolute;
-    right: 20px;
-    bottom: 35px;
+   
     text-transform: uppercase;
     box-shadow: 0 0 7px rgba(31, 255, 15, 6);
     font-weight: 700;
     transition: .5;
     cursor: pointer;
+}
+
+.positionButton{
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
 }
 
 .styleButton:hover{
