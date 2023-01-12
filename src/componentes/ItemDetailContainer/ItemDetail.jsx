@@ -2,7 +2,7 @@ import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import Button from "../Button/Button";
 
-function ItemDetail({title, img, detalle, precio, stock, id}){
+function ItemDetail({title, img, detalle, precio, stock}){
 return(
     <div>
     <h3 className="estiloCard__title">{title}</h3>
