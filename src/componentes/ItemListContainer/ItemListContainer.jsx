@@ -22,10 +22,11 @@ function ItemListContainer() {
                 .catch((error) => alert(error));
             }
             else{
-                obtenerProductoPorCategoria(categoryid)
+                obtenerProductoPorCategoria(categoryid).then((respuesta) =>{
+                    setProductos(respuesta)
+                })
             }
-        }, [categoryid]
-    )
+        }, [categoryid]);
 
     return (
         <Flex>

@@ -1,0 +1,10 @@
+.errordiv{
+    color: rgb(170, 170, 1);
+    font-weight: 700;
+    width: 100%;
+    height: calc(100vh - 140px);
+    display: grid;
+    place-content: center;
+    font-size: 30px;
+    letter-spacing: .5em;
+}

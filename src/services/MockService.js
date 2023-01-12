@@ -1,13 +1,13 @@
 const productos = [
-    { id: "01", title: "Cable USB", precio: "800", detalle: "Cable Imantado USB V8", img: "./imagenes/cable usb imantado v8.jpg", category: "Cables", stock: 10 },
-    { id: "02", title: "Cable USB", precio: "1200", detalle: "Cable USB STARK TIPO C", img: "./imagenes/cable usb STARK type C.jpg", stock: 20, category: "Cables" },
-    { id: "03", title: "Auriculares STARK", precio: "1000", detalle: "Auriculares STARK S5830", img: "/imagenes/auriculares STARK S5830 a.webp", stock: 5, category: "Auriculares" },
-    { id: "04", title: "Auriculares STARK", precio: "1600", detalle: "Auriculares STARK CJ-11", img: "./imagenes/auriculares stark cj-11.webp", stock: 10, category: "Auriculares" },
-    { id: "05", title: "Adaptador HDMI", precio: "1650", detalle: "Adaptador HDMI a VGA", img: "./imagenes/adaptador hdmi a vga.jpg", stock: 1, category: "Adaptadores" },
-    { id: "06", title: "Cable AUX", precio: "500", detalle: "Cable AUX 2Mts", img: "./imagenes/cable auxiliar.jpg", stock: 10, category: "Cables" },
-    { id: "07", title: "Cable HDMI", precio: "1200", detalle: "Cable HDMI a V8", img: "./imagenes/hdmi a v8.jpg", stock: 2, category: "Cables" },
-    { id: "08", title: "Cable Impresora", precio: "500", detalle: "Cable para Impresora 1.5Mts", img: "./imagenes/cable impresora.jpg", stock: 2, category: "Cables" },
-    { id: "09", title: "Cable rca", precio: "500", detalle: "Cable RCA 3 a 3 1.5Mts", img: "./imagenes/cable rca 3 a 3.png", stock: 0, category: "Cables" },
+    { id: "1", title: "Cable USB", precio: "800", detalle: "Cable Imantado USB V8", img: "./imagenes/cable usb imantado v8.jpg", category: "Cables", stock: 10 },
+    { id: "2", title: "Cable USB", precio: "1200", detalle: "Cable USB STARK TIPO C", img: "./imagenes/cable usb STARK type C.jpg", stock: 20, category: "Cables" },
+    { id: "3", title: "Auriculares STARK", precio: "1000", detalle: "Auriculares STARK S5830", img: "/imagenes/auriculares STARK S5830 a.webp", stock: 5, category: "Auriculares" },
+    { id: "4", title: "Auriculares STARK", precio: "1600", detalle: "Auriculares STARK CJ-11", img: "./imagenes/auriculares stark cj-11.webp", stock: 10, category: "Auriculares" },
+    { id: "5", title: "Adaptador HDMI", precio: "1650", detalle: "Adaptador HDMI a VGA", img: "./imagenes/adaptador hdmi a vga.jpg", stock: 1, category: "Adaptadores" },
+    { id: "6", title: "Cable AUX", precio: "500", detalle: "Cable AUX 2Mts", img: "./imagenes/cable auxiliar.jpg", stock: 10, category: "Cables" },
+    { id: "7", title: "Cable HDMI", precio: "1200", detalle: "Cable HDMI a V8", img: "./imagenes/hdmi a v8.jpg", stock: 2, category: "Cables" },
+    { id: "8", title: "Cable Impresora", precio: "500", detalle: "Cable para Impresora 1.5Mts", img: "./imagenes/cable impresora.jpg", stock: 2, category: "Cables" },
+    { id: "9", title: "Cable rca", precio: "500", detalle: "Cable RCA 3 a 3 1.5Mts", img: "./imagenes/cable rca 3 a 3.png", stock: 0, category: "Cables" },
     { id: "10", title: "Cable v3", precio: "700", detalle: "Cable V3 con Filtro", img: "./imagenes/cable v3 con filtro.png", stock: 5, category: "Cables" },
     { id: "11", title: "Cable HDMI", precio: "1100", detalle: "Cable HMDI 1.5Mts mallado", img: "./imagenes/HDMI90.jpg", stock: 1, category: "Cables" },
     { id: "12", title: "cable vga", precio: "700", detalle: "Cable VGA c/Filtro 3Mts", img: "./imagenes/VGA3MTS.jpg", stock: 1, category: "Cables" },
@@ -68,7 +68,8 @@ const obtenerProductos = () => {
 
 const obtenerProducto = (idProducto) => {
     return new Promise((resolve, reject) => {
-        const itemRequerido = productos.find((item) => { return (item.id === Number(idProducto)) })
+        let itemRequerido = productos.find((item) => { return (Number(item.id) === Number(idProducto)) })
+        console.log(idProducto)
         setTimeout(() => {
             if (itemRequerido) resolve(itemRequerido);
             else  reject("No se encontró el producto buscado")
@@ -78,7 +79,7 @@ const obtenerProducto = (idProducto) => {
 
 const obtenerProductoPorCategoria = ( categoriaURL) => {
     return new Promise((resolve, reject) => {
-        const productoRequerido = productos.filter(producto => producto.category === categoriaURL);
+        let productoRequerido = productos.filter(producto => producto.category === categoriaURL);
         setTimeout(() => {
             if (productoRequerido) resolve(productoRequerido);
             else  reject("No se encontró el producto buscado")
