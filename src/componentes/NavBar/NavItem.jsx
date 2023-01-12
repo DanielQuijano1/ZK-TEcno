@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./NavItem.css"
 
 /* CREO QUE CUMPLIRIA LA MISMA FUNCION QUE EL QUE PIDIERON, EL "ITEMLISTCONTAINER"*/
@@ -7,7 +8,7 @@ const NavItem = ({ title, href }) => {
 
     return (
         <li className="fullWidth">
-            <div className="navItemStyle">{title}</div>
+            <Link className="navItemStyle" to={href}>{title}</Link>
         </li>
     )
 }

@@ -2,15 +2,16 @@ import NavItem from "./NavItem";
 import Logo from "./Logo";
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
 
     const links = [
-        {title:"TIENDA", url:"/"}, 
-        {title:"RECOMENDACIONES", url:"/"}, 
-        {title:"SERVICIO TECNICO",url:"/"}, 
-        {title:"SOBRE NOSOTROS",url:"/"},
-        {title:"CONTACTANOS",url:"/"},
+        { title: "TIENDA", url: "/" },
+        { title: "SERVICIO TECNICO", url: "/" },
+        { title: "RECOMENDACIONES", url: "/" },
+        { title: "SOBRE NOSOTROS", url: "/" },
+        { title: "CONTACTANOS", url: "/" },
     ]
 
     return (
@@ -20,12 +21,14 @@ function NavBar(props) {
             </div>
             <nav>
                 <ul className="estiloUl">
-                {links.map((elemento) => ( <NavItem key={elemento.title} href={elemento.href} title={elemento.title}/>  ))}
+                    {links.map((elemento) => (<NavItem key={elemento.title} href={elemento.href} title={elemento.title} />))}
                 </ul>
             </nav>
+            <Link to="/cart" >
             <span>
-                <CartWidget />
+                <CartWidget /> 
             </span>
+            </Link>
         </div>
     )
 }

@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import Button from "./Button/Button";
 import "./Card.css";
 import ItemCount from "./ItemCount/ItemCount";
 
 
 function Card(props) {
-    const {title,precio,img,detalle,stock} = props.item
+    const { title, precio, img, detalle, stock, id } = props.item
 
     return (
         <div>
@@ -21,7 +22,9 @@ function Card(props) {
                 </div>
                 <div className="estiloCard__Contador margenLeft">
                     <ItemCount stock={stock} />
-                    <Button text="Agregar" />
+                    <Link to={`/detalle/${id}`}>
+                        <Button text="Agregar" />
+                    </Link>
                 </div>
             </div>
         </div>

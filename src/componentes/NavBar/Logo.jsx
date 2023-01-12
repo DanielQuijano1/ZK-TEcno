@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Logo.css"
 /* EN PROCESO, MI LOGO ES COMPLICADO PERO QUIERO HACERLO CON CSS */
 
@@ -5,6 +6,7 @@ import "./Logo.css"
 
 function Logo() {
     return (
+        <Link to="/">
         <div className="logo">
             <div className="logoA"></div>
             <div className="logoAGreenAfter"></div>
@@ -21,6 +23,7 @@ function Logo() {
             <div className="logoCGreenBefore"></div>
             <div className="logoCGrey"></div>
         </div>
+        </Link>
     )
 }
 

@@ -60,9 +60,34 @@ const productos = [
 const obtenerProductos = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
-                resolve(productos);
+            resolve(productos);
         }, 1000);
     });
 }
 
+
+const obtenerProducto = (idProducto) => {
+    return new Promise((resolve, reject) => {
+        const itemRequerido = productos.find((item) => { return (item.id === Number(idProducto)) })
+        setTimeout(() => {
+            if (itemRequerido) resolve(itemRequerido);
+            else  reject("No se encontró el producto buscado")
+        }, 2000);
+    });
+}
+
+const obtenerProductoPorCategoria = ( categoriaURL) => {
+    return new Promise((resolve, reject) => {
+        const productoRequerido = productos.filter(producto => producto.category === categoriaURL);
+        setTimeout(() => {
+            if (productoRequerido) resolve(productoRequerido);
+            else  reject("No se encontró el producto buscado")
+        }, 2000);
+    });
+}
+
+
+
 export default obtenerProductos;
+
+export { obtenerProducto , obtenerProductoPorCategoria };
