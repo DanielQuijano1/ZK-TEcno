@@ -1,11 +1,9 @@
-import "./Button.css"
-
-function Button({ text, href }) {
-
+import React from "react";
+function Button(props) {
   return (
-    <a href={href}>
-      <button className="styleButton">
-        {text}
+    <a href={props.href}>
+      <button onClick={props.onClick} className={props.className}>
+        {props.text}
       </button>
     </a>
   )

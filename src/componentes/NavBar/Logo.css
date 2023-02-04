@@ -1,6 +1,7 @@
 :root {
     --greenZK: #1fff0f;
     --greyZK: grey;
+    --skygreyZK: rgb(197, 197, 197);
     --shadowGreen: 0 0 7px rgba(31, 255, 15, 6);
 }
 
@@ -48,10 +49,13 @@
 }
 
 .logoAGrey{
+    position: absolute;
+    top: -5px;
+    left: 30px;
     width: 20px;
     height: 20px;
-    background-color: rgb(211, 211, 211) solid;
-    
+    background-color: var(--skygreyZK);
+    z-index: 3;
 }
 
 
@@ -88,9 +92,8 @@
 }
 
 .logoCGrey{
+
 }
-
-
 
 
 .logoC {

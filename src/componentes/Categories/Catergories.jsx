@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Categories.css";
 
@@ -6,7 +7,7 @@ function Categories(props) {
         <div className="estiloCategorias">
             <nav className="estiloCategorias_nav">
                 <div className="estiloCategorias_link espaciadoDerecho">Categorias:</div>
-                <ul className="estiloCategorias_ul">
+                <ul className="estiloCategorias_ul" >
                     <Link to="/" className="estiloCategorias_link"> MOSTRAR TODOS</Link>
                     <Link to="/categorias/Cables" className="estiloCategorias_link">Cables</Link>
                     <Link to="/categorias/Cargadores" className="estiloCategorias_link">Cargadores</Link>
@@ -20,6 +21,8 @@ function Categories(props) {
         </div>
     )
 }
+
+
 
 export default Categories;
 

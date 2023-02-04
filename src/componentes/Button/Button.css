@@ -5,7 +5,6 @@
     border: none;
     margin-top: 15px;
     color: black;
-   
     text-transform: uppercase;
     box-shadow: 0 0 7px rgba(31, 255, 15, 6);
     font-weight: 700;
@@ -13,13 +12,13 @@
     cursor: pointer;
 }
 
-.positionButton{
+.positionButton {
     position: absolute;
     right: 20px;
     bottom: 35px;
 }
 
-.styleButton:hover{
+.styleButton:hover {
     scale: 1.1;
     transition: .3s;
 }

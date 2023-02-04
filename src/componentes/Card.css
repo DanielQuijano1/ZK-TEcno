@@ -1,5 +1,5 @@
 .estiloCard {
-    background-color: #7e7e7e;
+    background-color: #7e7e7e91 ;
     padding: 50px 10px 30px 10px;
     border-radius: 10px;
     width: 300px;
@@ -36,6 +36,7 @@
 .estiloCard__PrecioYDescripcion {
     display: flex;
     flex-direction: row;
+    padding-bottom: 10px;
 }
 
 .estiloCard__precio {
@@ -65,4 +66,9 @@
 
 .margenLeft{
     margin-left: 10px;
+}
+
+.ultimoDisponible{
+    max-height: 20px;
+    min-height: 20px;
 }

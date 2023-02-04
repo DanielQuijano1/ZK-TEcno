@@ -43,7 +43,7 @@
 .css-selector {
     background: linear-gradient(232deg, #c1c1c1, #c1c1c1, #c1c1c1, #c1c1c1, #eeeeee, #c1c1c1, #c1c1c1, #c1c1c1, #c1c1c1);
     background-size: 200% 200%;
-    animation: AnimationName 5s ease-in infinite;
+    animation: AnimationName 5s ease-in-out infinite;
 }
 
 

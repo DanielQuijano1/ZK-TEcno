@@ -72,7 +72,7 @@ const obtenerProducto = (idProducto) => {
         setTimeout(() => {
             if (itemRequerido) resolve(itemRequerido);
             else  reject("No se encontró el producto buscado")
-        }, 2000);
+        }, 200);
     });
 }
 
@@ -83,7 +83,7 @@ const obtenerProductoPorCategoria = ( categoriaURL) => {
         setTimeout(() => {
             if (productoRequerido) resolve(productoRequerido);
             else  reject("No se encontró el producto buscado")
-        }, 2000);
+        }, 1000);
     });
 }
 

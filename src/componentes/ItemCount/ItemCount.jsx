@@ -1,24 +1,35 @@
 import { useState } from "react";
 import "./ItemCount.css"
+import Button from "../Button/Button";
+import React from "react";
 
-function ItemCount(props) {
-    const [count, setCount] = useState(1);
+function ItemCount({onAddToCart, stock}) {
+    const [count, setCount] = useState(0);
 
     function handleCountAdd() {
-        setCount(count + 1);
+        if (stock > count){
+            setCount(count + 1);
+        }
     }
 
     function handleCountRemove() {
-        setCount(count - 1);
+        if (count > 0){
+            setCount(count - 1); 
+        }
     }
+
+
     return (
-        <div className="itemCount__Container">
-            <div className="itemCount__Text">Cantidad</div>
-            <div className="itemCount__CountBox">
-                <button className="itemCount__Button borderLeft" disabled={count === 1} onClick={handleCountRemove}>-</button>
-                <div className="itemCount__CountDisplay"> {count} </div>
-                <button className="itemCount__Button borderRight" disabled={count === props.stock} onClick={handleCountAdd}>+</button>
+        <div className="estiloCard__Contador__detail">
+            <div className="itemCount__Container">
+                <div className="itemCount__Text">Cantidad</div>
+                <div className="itemCount__CountBox">
+                    <Button className="itemCount__Button borderLeft" onClick={handleCountRemove} text="-"/>
+                    <div className="itemCount__CountDisplay"> {count} </div>
+                    <Button className="itemCount__Button borderRight" onClick={handleCountAdd} text="+" />
+                </div>
             </div>
+            <Button className="boton__detail styleButton" onClick={() => onAddToCart(count)} text="Agregar al carrito" />
         </div>
     )
 }

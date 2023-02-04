@@ -1,9 +1,10 @@
 import React from "react";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
+import "./HomePage.css"
 
 function HomePage(){
     return(
-        <div>
+        <div className="estiloHome">
             <ItemListContainer/>
         </div>
     )

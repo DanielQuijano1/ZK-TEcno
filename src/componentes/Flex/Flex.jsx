@@ -1,3 +1,4 @@
+import React from "react";
 import "./Flex.css"
 
 function Flex(props) {
