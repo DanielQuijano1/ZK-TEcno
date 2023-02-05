@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { obtenerProductos } from "../../services/firebase";
 import Card from "../Card";
 import Flex from "../Flex/Flex";
-import { obtenerProductoPorCategoria } from "../../services/MockService";
+import { obtenerProductoPorCategoria } from "../../services/firebase";
 import Loader from "../Loader/Loeader";
 
 function ItemListContainer() {

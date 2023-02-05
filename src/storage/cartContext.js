@@ -7,30 +7,32 @@ function CartProvider(props) {
 
     const test = () => console.log("test")
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
 
     function addToCart(item) {
-        let isInCart = cart.findIndex(itemInCart => itemInCart.id === item.id);
         let newCart = cart.map(item => item);
-        if (isInCart !== -1) {
-            newCart[isInCart].push()
-            
-        } else {
-            newCart.push(item)
-            setCart(newCart) 
-        }
+        
+        newCart.push(item)
+        setCart(newCart)
     }
 
-    function removeItem(itemid) {
-
+    function removeItem(itemInCart) {
+        let newCart = cart.filter(elem => elem !== itemInCart)
+        setCart(newCart)
     }
 
     function clear() {
         setCart([])
     }
 
-    function getTotalItemsInCart() {
+    function multiplicar(a, b) {
+        return a * b
     }
+    let total = 0;
+    const getTotalItemsInCart = cart.reduce(
+        (totalCuenta, i) => totalCuenta + multiplicar(i.precio, i.count),
+        total)
+
 
     return (
         <cartContext.Provider value={{ cart, test, addToCart, removeItem, clear, getTotalItemsInCart }}>

@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc, doc, query, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBYyjDa7X4GgI-moZRP6KriSIgdnf6VHBI",
@@ -30,6 +30,24 @@ export async function obtenerProducto(id){
     const docReferencia = doc(productosRefrencia, id)
     const snapshot = await getDoc(docReferencia);
     return snapshot.data()
+}
+
+export async function obtenerProductoPorCategoria(categoryUrl){
+    const productosRefrencia = collection(db, "productos");
+    const q = query(productosRefrencia, where("category","==",categoryUrl));
+    const snapshot = await getDocs(q)
+    const productos = snapshot.docs.map((elem) => {
+        let producto = elem.data()
+        producto.id = elem.id;
+        return producto;
+    })
+    return(productos)
+}
+
+export async function createOrder(order){
+    const orderRef = collection(db, "order")
+    let respuesta = await addDoc(orderRef,order)
+    return respuesta.id
 }
 
 export default db

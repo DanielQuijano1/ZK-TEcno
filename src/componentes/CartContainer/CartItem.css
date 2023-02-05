@@ -35,3 +35,13 @@ background-color: #7e7e7e91 ;
     height: 30px;
     padding-top: 10px;
 }
+
+@media screen and (max-width:720px){
+    .targetaCart{
+        width: 100vw;
+        display: inline-block;
+    }
+    .espaciadoCart{
+        width: 200px;
+    }
+}

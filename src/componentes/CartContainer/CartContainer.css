@@ -29,10 +29,18 @@
 
 .totalDeCompra{
     display: flex;
-    justify-content: end;
     color: aliceblue;
 }
 
 .espaciadoSinProductos{
     margin-top: 50px;
+}
+
+@media screen and (max-width:720px){
+    .flex{
+        width: 80vw;
+        position: relative;
+        left: 20%;
+    }
+
 }

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import "./../Button/Button.css"
 import "./ItemDetail.css"
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import { cartContext } from "../../storage/cartContext";
 
 function ItemDetail({ title, img, detalle, precio, stock, onAddToCart, isInCart }) {
+
+    const {cart} = useContext(cartContext)
+
 
     return (
         <div className="estiloCard__flex">
@@ -21,10 +25,15 @@ function ItemDetail({ title, img, detalle, precio, stock, onAddToCart, isInCart 
                         <h3 className="estiloCard__precio">${precio}</h3>
                     </div>
                     <div>
-                        {isInCart ?
-                            <Link to="/cart" >
-                                <Button className="styleButton" text="Ir Al Carrito"></Button>
-                            </Link>
+                        { !cart.includes({title}) === isInCart ?
+                            <div className="estiloCard__Contador__detail">
+                                <Link to="/cart" >
+                                    <Button className="styleButton" text="Ir Al Carrito"></Button>
+                                </Link>
+                                <Link to="/">
+                                    <Button className="styleButton" text="Seguir Comprando"></Button>
+                                </Link>
+                            </div>
                             :
                             <ItemCount className="boton__detail" stock={stock} onAddToCart={onAddToCart} />
                         }

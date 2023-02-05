@@ -5,10 +5,30 @@ import CartItem from "./CartItem";
 import "./CartContainer.css";
 import "./CartItem.css"
 import { Link } from "react-router-dom";
+import { createOrder } from "../../services/firebase";
+import { useNavigate } from "react-router-dom";
 
 function CartContainer() {
 
     const { cart, removeItem, clear, getTotalItemsInCart } = useContext(cartContext);
+    const navigate = useNavigate();
+
+    function handleCheckout(evt) {
+        const items = cart.map(({id, precio, title, count}) => ({id, precio, title, count}))
+        const order = {
+            buyer: {
+                name: "Raul",
+                email: "a@a.com",
+                tel: 12345,
+            },
+            items: items,
+            total: getTotalItemsInCart(),
+            date: new Date()
+        }
+        createOrder(order).then((id) => {
+            navigate(`/ty`)
+        })
+    }
 
     return (
 
@@ -32,7 +52,7 @@ function CartContainer() {
                                 <p className="textoCartItem">Eliminar</p>
                             </div>
                         </div>
-                        
+
                         <div className="cartItems">
                             {cart.map((itemInCart) => (
                                 <CartItem itemInCart={itemInCart} removeItem={removeItem}></CartItem>
@@ -41,7 +61,7 @@ function CartContainer() {
                         <p className="targetaCart totalDeCompra">El total de tu compra es de ${getTotalItemsInCart}</p>
                         <div className="buttonItems">
                             <Button onClick={clear} className=" styleButton" text="Limpiar Carrito" ></Button>
-                            <Button className=" styleButton" text="Finalizar Compra" ></Button>
+                            <Button onClick={handleCheckout} className=" styleButton" text="Finalizar Compra" ></Button>
                         </div>
                     </div>
             }
