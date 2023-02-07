@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { cartContext } from "../../storage/cartContext";
 import Button from "../Button/Button";
 import CartItem from "./CartItem";
@@ -6,15 +6,13 @@ import "./CartContainer.css";
 import "./CartItem.css"
 import { Link } from "react-router-dom";
 import { createOrder } from "../../services/firebase";
-import { useNavigate } from "react-router-dom";
 
 function CartContainer() {
-
     const { cart, removeItem, clear, getTotalItemsInCart } = useContext(cartContext);
-    const navigate = useNavigate();
+    const [orderId , setOrderId] = useState();
 
     function handleCheckout(evt) {
-        const items = cart.map(({id, precio, title, count}) => ({id, precio, title, count}))
+        const items = cart.map(({ id, precio, title, count }) => ({ id, precio, title, count }))
         const order = {
             buyer: {
                 name: "Raul",
@@ -25,9 +23,22 @@ function CartContainer() {
             total: getTotalItemsInCart(),
             date: new Date()
         }
-        createOrder(order).then((id) => {
-            navigate(`/ty`)
-        })
+        async function sendOrder() {
+            let id = createOrder(order)
+            setOrderId(id);
+
+        }
+        sendOrder();
+    }
+
+
+    if(orderId){
+        return(
+            <div>
+                <h1>Gracias Por Tu Compra!</h1>
+                <p>El id de tu compra es: {orderId}</p>
+            </div>
+        ) 
     }
 
     return (
@@ -60,8 +71,11 @@ function CartContainer() {
                         </div>
                         <p className="targetaCart totalDeCompra">El total de tu compra es de ${getTotalItemsInCart}</p>
                         <div className="buttonItems">
-                            <Button onClick={clear} className=" styleButton" text="Limpiar Carrito" ></Button>
-                            <Button onClick={handleCheckout} className=" styleButton" text="Finalizar Compra" ></Button>
+                            <Button onClick={clear} className="styleButton" text="Limpiar Carrito" ></Button>
+                            <Link to="/">
+                                <Button className="styleButton" text="Seguir Comprando"></Button>
+                            </Link>
+                            <Button onClick={handleCheckout} className="styleButton" text="Finalizar Compra" ></Button>
                         </div>
                     </div>
             }

@@ -3,15 +3,10 @@ import NavItem from "./NavItem";
 import Logo from "./Logo";
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
-import { useContext } from "react";
-import { cartContext } from "../../storage/cartContext";
 import { Link } from "react-router-dom";
 
 
 function NavBar(props) {
-
-    const context = useContext(cartContext);
-    context.test();
 
     const links = [
         { title: "TIENDA", url: "/" },

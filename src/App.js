@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavBar from './componentes/NavBar/NavBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './storage/cartContext';
@@ -25,7 +26,7 @@ function App() {
             <Route path='/categorias/:categoryid' element={<ItemListContainer />} />
             <Route path='/cart'  element={<CartContainer/>}/>
             <Route path='*' element={<Error404 />} />
-            <Route path='/ty' element={<h1>Gracias por tu compra</h1>}/>
+            <Route path='/ty/:orderid' element={<h1>Gracias por tu compra</h1>}/>
           </Routes>
         </CartProvider>
       </BrowserRouter>
