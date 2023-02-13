@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ZK-Tecno/static/css/main.98486230.css",
+    "main.js": "/ZK-Tecno/static/js/main.1501c3c3.js",
+    "static/js/787.7d757117.chunk.js": "/ZK-Tecno/static/js/787.7d757117.chunk.js",
+    "static/media/26175-nebula-space.jpg": "/ZK-Tecno/static/media/26175-nebula-space.e4d81c30bb3f0ea4694a.jpg",
+    "index.html": "/ZK-Tecno/index.html",
+    "main.98486230.css.map": "/ZK-Tecno/static/css/main.98486230.css.map",
+    "main.1501c3c3.js.map": "/ZK-Tecno/static/js/main.1501c3c3.js.map",
+    "787.7d757117.chunk.js.map": "/ZK-Tecno/static/js/787.7d757117.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98486230.css",
+    "static/js/main.1501c3c3.js"
+  ]
+}
