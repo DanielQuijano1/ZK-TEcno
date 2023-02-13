@@ -9,26 +9,28 @@ import { createOrder } from "../../services/firebase";
 
 function CartContainer() {
     const { cart, removeItem, clear, getTotalItemsInCart } = useContext(cartContext);
-    const [orderId , setOrderId] = useState();
+    const [ orderId , setOrderId] = useState();
 
     function handleCheckout(evt) {
         const items = cart.map(({ id, precio, title, count }) => ({ id, precio, title, count }))
+        
         const order = {
             buyer: {
                 name: "Raul",
                 email: "a@a.com",
-                tel: 12345,
+                phone: 12345,
             },
             items: items,
             total: getTotalItemsInCart(),
-            date: new Date()
-        }
-        async function sendOrder() {
-            let id = createOrder(order)
-            setOrderId(id);
+            date: new Date(),
+        };
 
+        console.table(order)
+        async function sendOrder() {
+            let id = await createOrder(order)
+            setOrderId(id)
         }
-        sendOrder();
+        sendOrder()
     }
 
 
@@ -50,7 +52,8 @@ function CartContainer() {
                         <Link to="/" className="espaciadoSinProductos">
                             <Button text="Volver al inicio" className="styleButton"></Button>
                         </Link>
-                    </div> :
+                    </div> 
+                    :
                     <div className="flex">
 
                         <div className="targetaCart minimizado">
@@ -69,7 +72,7 @@ function CartContainer() {
                                 <CartItem itemInCart={itemInCart} removeItem={removeItem}></CartItem>
                             ))}
                         </div>
-                        <p className="targetaCart totalDeCompra">El total de tu compra es de ${getTotalItemsInCart}</p>
+                        <p className="targetaCart totalDeCompra">El total de tu compra es de ${getTotalItemsInCart()}</p>
                         <div className="buttonItems">
                             <Button onClick={clear} className="styleButton" text="Limpiar Carrito" ></Button>
                             <Link to="/">

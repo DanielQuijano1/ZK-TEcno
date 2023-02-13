@@ -1,9 +1,10 @@
+import { useContext } from "react";
+import { cartContext } from "../../storage/cartContext";
 import Button from "../Button/Button";
 import "./CartItem.css"
 
 
 function CartItem({ itemInCart, removeItem}) {
-
     return (
         <div className="targetaCart">
             <div className="textoCartItem">{itemInCart.detalle}</div>

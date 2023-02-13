@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import { cartContext } from "../../storage/cartContext";
 
-function ItemDetail({ title, img, detalle, precio, stock, onAddToCart, isInCart }) {
+function ItemDetail({ title, img, detalle, precio, validarStock, onAddToCart, isInCart }) {
 
     const {cart} = useContext(cartContext)
 
@@ -35,7 +35,7 @@ function ItemDetail({ title, img, detalle, precio, stock, onAddToCart, isInCart 
                                 </Link>
                             </div>
                             :
-                            <ItemCount className="boton__detail" stock={stock} onAddToCart={onAddToCart} />
+                            <ItemCount className="boton__detail" stock={validarStock} onAddToCart={onAddToCart} />
                         }
                     </div>
                 </div>

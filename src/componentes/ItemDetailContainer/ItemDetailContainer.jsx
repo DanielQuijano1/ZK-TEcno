@@ -11,11 +11,20 @@ function ItemDetailContainer() {
     const [isInCart, setIsInCart] = useState(false)
 
     let params = useParams();
-    const { addToCart } = useContext(cartContext);
+    const { cart, addToCart } = useContext(cartContext);
 
     function handleAddToCart(count) {
         setIsInCart(true)
         addToCart({ ...producto, count: count });
+    }
+
+    function validarStock(){
+        let itemInCart = cart.find(item => item.id === producto.id);
+        let stockUpdate = producto.stock;
+        if(itemInCart){
+            stockUpdate = producto.stock - itemInCart.count
+        }
+        return stockUpdate
     }
 
     useEffect(() => {
@@ -35,7 +44,7 @@ function ItemDetailContainer() {
                 isLoading ? (
                     <Loader></Loader>
                 ) : (
-                    <ItemDetail isInCart={isInCart} onAddToCart={handleAddToCart} title={producto.title} img={producto.img} detalle={producto.detalle} precio={producto.precio} stock={producto.stock} />
+                    <ItemDetail isInCart={isInCart} onAddToCart={handleAddToCart} title={producto.title} img={producto.img} detalle={producto.detalle} precio={producto.precio} validarStock={validarStock()} />
                 )
             }
         </>
