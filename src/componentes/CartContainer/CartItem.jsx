@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { cartContext } from "../../storage/cartContext";
+
 import Button from "../Button/Button";
 import "./CartItem.css"
 

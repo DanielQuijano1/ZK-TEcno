@@ -46,7 +46,7 @@ export async function obtenerProductoPorCategoria(categoryUrl){
 
 export async function createOrder(order){
     const orderRef = collection(db, "order");
-    let respuesta = await addDoc(orderRef,order);
+    let respuesta = await addDoc(orderRef, order);
     return respuesta.id;
 }
 

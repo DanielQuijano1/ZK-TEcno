@@ -26,8 +26,7 @@ function ItemListContainer() {
                     setTextoAlerta(error)
                 })
                 .finally(() => setIsLoading(false))
-        }
-        else {
+        } else {
             obtenerProductoPorCategoria(categoryid).then((respuesta) => {
                 setProductos(respuesta)
                 setIsLoading(false)

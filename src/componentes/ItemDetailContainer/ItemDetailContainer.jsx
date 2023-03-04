@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { obtenerProducto } from "../../services/firebase";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";

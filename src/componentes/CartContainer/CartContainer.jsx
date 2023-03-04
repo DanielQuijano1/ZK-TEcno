@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { cartContext } from "../../storage/cartContext";
 import Button from "../Button/Button";
 import CartItem from "./CartItem";
@@ -26,10 +26,12 @@ function CartContainer() {
         };
 
         console.table(order)
+        
         async function sendOrder() {
-            let id = await createOrder(order)
-            setOrderId(id)
-        }
+            let idOrder = await createOrder(order); 
+            setOrderId(idOrder); 
+        };
+
         sendOrder()
     }
 
